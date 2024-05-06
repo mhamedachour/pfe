@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:projet_final_pfe/Screens/addministre.dart';
 import 'package:projet_final_pfe/Screens/login.dart';
 
 void main() {
@@ -16,8 +17,11 @@ class MyApp extends StatelessWidget {
       title: 'projet final',
       theme: ThemeData(
         primaryColor: HexColor("#04733B"),
+        appBarTheme: AppBarTheme(
+          backgroundColor: HexColor("#04733B"),
+        ),
       ),
-      home: Login(),
+      home: admin(),
     );
   }
 }

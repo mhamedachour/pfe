@@ -6,10 +6,6 @@ import 'package:projet_final_pfe/comp/genTextForm.dart';
 import 'package:projet_final_pfe/main.dart';
 
 class Login extends StatefulWidget {
-  final _contUserId = TextEditingController();
-
-  final _contpassword = TextEditingController();
-
   Login({super.key});
 
   @override
