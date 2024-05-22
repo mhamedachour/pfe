@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:projet_final_pfe/Screens/addministre.dart';
+import 'package:projet_final_pfe/Screens/etdiant.dart';
 import 'package:projet_final_pfe/Screens/login.dart';
+import 'package:projet_final_pfe/Screens/prof.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: HexColor("#04733B"),
         ),
       ),
-      home: admin(),
+      home: pageprof(),
     );
   }
 }

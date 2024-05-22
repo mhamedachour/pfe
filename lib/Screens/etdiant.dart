@@ -2,20 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:projet_final_pfe/Screens/creeetdiant.dart';
 import 'package:projet_final_pfe/Screens/creeprof.dart';
+import 'package:projet_final_pfe/Screens/scan.dart';
 
-class admin extends StatefulWidget {
-  const admin({super.key});
+class pageetdaint extends StatefulWidget {
+  const pageetdaint({super.key});
 
   @override
-  State<admin> createState() => _adminState();
+  State<pageetdaint> createState() => _pageetdaintState();
 }
 
-class _adminState extends State<admin> {
+class _pageetdaintState extends State<pageetdaint> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('admin'),
+        title: Text('etdiant'),
         backgroundColor: HexColor("#04733B"),
       ),
       backgroundColor: HexColor("#eeeeee"),
@@ -27,7 +28,7 @@ class _adminState extends State<admin> {
             GestureDetector(
               onTap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => prof()));
+                    context, MaterialPageRoute(builder: (context) => scan()));
               },
               child: Container(
                 padding: EdgeInsets.all(20),
@@ -56,47 +57,7 @@ class _adminState extends State<admin> {
                       color: HexColor("#04733B"),
                     ),
                     Text(
-                      'create prof',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => etdiant()));
-              },
-              child: Container(
-                padding: EdgeInsets.all(20),
-                margin: EdgeInsets.fromLTRB(15, 40, 10, 10),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(13),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey,
-                          offset: Offset(3, 3),
-                          blurRadius: 5,
-                          spreadRadius: 1),
-                      BoxShadow(
-                          color: Colors.grey,
-                          offset: Offset(-3, -3),
-                          blurRadius: 5,
-                          spreadRadius: 1),
-                    ]),
-                child: Column(
-                  children: [
-                    Spacer(),
-                    Icon(
-                      Icons.school_outlined,
-                      size: 100,
-                      color: HexColor("#04733B"),
-                    ),
-                    Text(
-                      'create etudient',
+                      'scan QR',
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     )

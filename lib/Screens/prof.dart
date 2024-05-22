@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:projet_final_pfe/Screens/afichier-QR.dart';
 import 'package:projet_final_pfe/Screens/creeetdiant.dart';
 import 'package:projet_final_pfe/Screens/creeprof.dart';
 
-class admin extends StatefulWidget {
-  const admin({super.key});
+class pageprof extends StatefulWidget {
+  const pageprof({super.key});
 
   @override
-  State<admin> createState() => _adminState();
+  State<pageprof> createState() => _pageprofState();
 }
 
-class _adminState extends State<admin> {
+class _pageprofState extends State<pageprof> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('admin'),
+        title: Text('prof'),
         backgroundColor: HexColor("#04733B"),
       ),
       backgroundColor: HexColor("#eeeeee"),
@@ -27,7 +28,7 @@ class _adminState extends State<admin> {
             GestureDetector(
               onTap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => prof()));
+                    context, MaterialPageRoute(builder: (context) => codeQR()));
               },
               child: Container(
                 padding: EdgeInsets.all(20),
@@ -56,7 +57,7 @@ class _adminState extends State<admin> {
                       color: HexColor("#04733B"),
                     ),
                     Text(
-                      'create prof',
+                      'afficher QR',
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     )

@@ -26,7 +26,7 @@ class _LoginState extends State<Login> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                loginSignupHeader('Loogin'),
+                loginSignupHeader('Log in'),
                 getTextForm(
                   controller: _contUserId,
                   hintName: 'User Id',
