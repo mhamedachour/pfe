@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:projet_final_pfe/Screens/login.dart';
@@ -17,35 +19,40 @@ class creerDepartement extends StatefulWidget {
 class _creerDepartementState extends State<creerDepartement> {
   final _formkey = new GlobalKey<FormState>();
 
-  final _contUserId = TextEditingController();
-  final _contdepartementName = TextEditingController();
-  final _contEmail = TextEditingController();
-  final _contpassword = TextEditingController();
-  final _contCpassword = TextEditingController();
+  CollectionReference admin = FirebaseFirestore.instance.collection('admin');
 
-  signUp() {
-    final form = _formkey.currentState;
-    String uid = _contUserId.text;
-    String udep = _contdepartementName.text;
-    String uEmail = _contEmail.text;
-    String uPassword = _contpassword.text;
-    String uCPassword = _contCpassword.text;
-    if (form!.validate()) {
-      AlertDiaLog(context, "ok");
-      print(uid);
-    }
-    // if (uid.isEmpty) {
-    //   AlertDiaLog(context, "Please Enter user ID");
-    // } else if (udep.isEmpty) {
-    //   AlertDiaLog(context, "Please Enter Name Departement");
-    // } else if (uEmail.isEmpty) {
-    //   AlertDiaLog(context, "Please Enter Email");
-    // } else if (uPassword.isEmpty) {
-    //   AlertDiaLog(context, "Please Enter password");
-    // } else if (uCPassword.isEmpty) {
-    //   AlertDiaLog(context, "Please Enter confirm passwoed");
-    // }
+  Future<void> addUser() {
+    // Call the user's CollectionReference to add a new user
+    return admin
+        .add({
+          "userId": contUserId.text,
+          "nomdepartement": contdepartementName.text,
+          "email": contEmail.text,
+          "password": contpassword.text,
+          "cpassword": contCpassword.text,
+        })
+        .then((value) => print("User Added"))
+        .catchError((error) => print("Failed to add user: $error"));
   }
+
+  TextEditingController contUserId = TextEditingController();
+  TextEditingController contdepartementName = TextEditingController();
+  TextEditingController contEmail = TextEditingController();
+  TextEditingController contpassword = TextEditingController();
+  TextEditingController contCpassword = TextEditingController();
+
+  // signUp() {
+  //   final form = _formkey.currentState;
+  //   String uid = contUserId.text;
+  //   String udep = contdepartementName.text;
+  //   String uEmail = contEmail.text;
+  //   String uPassword = contpassword.text;
+  //   String uCPassword = contCpassword.text;
+  //   if (form!.validate()) {
+  //     AlertDiaLog(context, "ok");
+  //     print(uid);
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -62,28 +69,28 @@ class _creerDepartementState extends State<creerDepartement> {
                 children: [
                   loginSignupHeader('Créer un Departement'),
                   getTextForm(
-                    controller: _contUserId,
+                    controller: contUserId,
                     hintName: 'User Id',
                     icon: Icons.person,
                     inputType: TextInputType.number,
                   ),
                   SizedBox(height: 10),
                   getTextForm(
-                    controller: _contdepartementName,
+                    controller: contdepartementName,
                     hintName: 'Nom de departement',
                     icon: Icons.school_outlined,
                     inputType: TextInputType.name,
                   ),
                   SizedBox(height: 10),
                   getTextForm(
-                    controller: _contEmail,
+                    controller: contEmail,
                     hintName: 'Email',
                     icon: Icons.email,
                     inputType: TextInputType.emailAddress,
                   ),
                   SizedBox(height: 10),
                   getTextForm(
-                    controller: _contpassword,
+                    controller: contpassword,
                     hintName: 'Password',
                     icon: Icons.lock,
                     obscureText: true,
@@ -91,7 +98,7 @@ class _creerDepartementState extends State<creerDepartement> {
                   ),
                   SizedBox(height: 10),
                   getTextForm(
-                    controller: _contCpassword,
+                    controller: contCpassword,
                     hintName: "Confirm Password",
                     icon: Icons.lock,
                     obscureText: true,
@@ -101,7 +108,11 @@ class _creerDepartementState extends State<creerDepartement> {
                     margin: EdgeInsets.fromLTRB(30, 30, 30, 5),
                     width: double.infinity,
                     child: TextButton(
-                        onPressed: signUp,
+                        onPressed: () {
+                          addUser();
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Login()));
+                        },
                         child: Text(
                           'Sign up',
                           style: TextStyle(

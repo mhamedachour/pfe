@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:projet_final_pfe/Screens/creerDepartement.dart';
 import 'package:projet_final_pfe/comp/genLogin.dart';
@@ -13,8 +16,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  final _contUserId = TextEditingController();
-  final _contpassword = TextEditingController();
+  TextEditingController contUserId = TextEditingController();
+  TextEditingController contpassword = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,14 +31,14 @@ class _LoginState extends State<Login> {
               children: [
                 loginSignupHeader('Log in'),
                 getTextForm(
-                  controller: _contUserId,
+                  controller: contUserId,
                   hintName: 'User Id',
                   icon: Icons.person,
                   inputType: TextInputType.number,
                 ),
                 SizedBox(height: 10),
                 getTextForm(
-                  controller: _contpassword,
+                  controller: contpassword,
                   hintName: "Password",
                   icon: Icons.lock,
                   obscureText: true,
