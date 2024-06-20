@@ -1,11 +1,15 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:projet_final_pfe/Screens/creeetdiant.dart';
 import 'package:projet_final_pfe/Screens/creeprof.dart';
+import 'package:projet_final_pfe/Screens/login.dart';
 
 class admin extends StatefulWidget {
-  const admin({super.key});
-
+  String? Nam;
+  admin(String e) {
+    this.Nam = e;
+  }
   @override
   State<admin> createState() => _adminState();
 }
@@ -15,8 +19,16 @@ class _adminState extends State<admin> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('admin'),
+        title: Text("${this.widget.Nam}"),
         backgroundColor: HexColor("#04733B"),
+        actions: [
+          IconButton(
+              onPressed: () async {
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (context) => Login()));
+              },
+              icon: Icon(Icons.logout))
+        ],
       ),
       backgroundColor: HexColor("#eeeeee"),
       body: Expanded(
@@ -51,7 +63,7 @@ class _adminState extends State<admin> {
                   children: [
                     Spacer(),
                     Icon(
-                      Icons.school_outlined,
+                      Icons.person_add_sharp,
                       size: 100,
                       color: HexColor("#04733B"),
                     ),
@@ -91,7 +103,7 @@ class _adminState extends State<admin> {
                   children: [
                     Spacer(),
                     Icon(
-                      Icons.school_outlined,
+                      Icons.person_add_sharp,
                       size: 100,
                       color: HexColor("#04733B"),
                     ),

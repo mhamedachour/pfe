@@ -4,9 +4,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:projet_final_pfe/Screens/addministre.dart';
+import 'package:projet_final_pfe/Screens/creeetdiant.dart';
+import 'package:projet_final_pfe/Screens/creeprof.dart';
 import 'package:projet_final_pfe/Screens/etdiant.dart';
 import 'package:projet_final_pfe/Screens/login.dart';
 import 'package:projet_final_pfe/Screens/prof.dart';
+import 'package:projet_final_pfe/Screens/scan.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -3,9 +3,17 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:projet_final_pfe/Screens/afichier-QR.dart';
 import 'package:projet_final_pfe/Screens/creeetdiant.dart';
 import 'package:projet_final_pfe/Screens/creeprof.dart';
+import 'package:projet_final_pfe/Screens/listpresence.dart';
+import 'package:projet_final_pfe/Screens/login.dart';
 
 class pageprof extends StatefulWidget {
-  const pageprof({super.key});
+  String? Nam;
+  String? module;
+
+  pageprof(String e, String m) {
+    this.Nam = e;
+    this.module = m;
+  }
 
   @override
   State<pageprof> createState() => _pageprofState();
@@ -16,8 +24,16 @@ class _pageprofState extends State<pageprof> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('prof'),
+        title: Text('${this.widget.Nam}'),
         backgroundColor: HexColor("#04733B"),
+        actions: [
+          IconButton(
+              onPressed: () async {
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (context) => Login()));
+              },
+              icon: Icon(Icons.logout))
+        ],
       ),
       backgroundColor: HexColor("#eeeeee"),
       body: Expanded(
@@ -28,7 +44,9 @@ class _pageprofState extends State<pageprof> {
             GestureDetector(
               onTap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => codeQR()));
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => codeQR('${this.widget.module}')));
               },
               child: Container(
                 padding: EdgeInsets.all(20),
@@ -52,7 +70,7 @@ class _pageprofState extends State<pageprof> {
                   children: [
                     Spacer(),
                     Icon(
-                      Icons.school_outlined,
+                      Icons.qr_code_2,
                       size: 100,
                       color: HexColor("#04733B"),
                     ),
@@ -68,7 +86,7 @@ class _pageprofState extends State<pageprof> {
             GestureDetector(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => etdiant()));
+                    MaterialPageRoute(builder: (context) => listprisence()));
               },
               child: Container(
                 padding: EdgeInsets.all(20),
@@ -92,12 +110,12 @@ class _pageprofState extends State<pageprof> {
                   children: [
                     Spacer(),
                     Icon(
-                      Icons.school_outlined,
+                      Icons.list_alt,
                       size: 100,
                       color: HexColor("#04733B"),
                     ),
                     Text(
-                      'create etudient',
+                      'la list presence',
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     )

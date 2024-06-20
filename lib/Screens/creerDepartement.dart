@@ -127,7 +127,7 @@ class _creerDepartementState extends State<creerDepartement> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Does you have accout?'),
+                        Text('Avez-vous des comptes?'),
                         TextButton(
                           onPressed: () {
                             Navigator.pushAndRemoveUntil(

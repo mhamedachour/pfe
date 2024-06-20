@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:projet_final_pfe/Screens/creeetdiant.dart';
 import 'package:projet_final_pfe/Screens/creeprof.dart';
+import 'package:projet_final_pfe/Screens/login.dart';
 import 'package:projet_final_pfe/Screens/scan.dart';
 
 class pageetdaint extends StatefulWidget {
-  const pageetdaint({super.key});
+  String? Nam;
+
+  pageetdaint(String e) {
+    this.Nam = e;
+  }
 
   @override
   State<pageetdaint> createState() => _pageetdaintState();
@@ -16,8 +21,16 @@ class _pageetdaintState extends State<pageetdaint> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('etdiant'),
+        title: Text('${this.widget.Nam}'),
         backgroundColor: HexColor("#04733B"),
+        actions: [
+          IconButton(
+              onPressed: () async {
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (context) => Login()));
+              },
+              icon: Icon(Icons.logout))
+        ],
       ),
       backgroundColor: HexColor("#eeeeee"),
       body: Expanded(
@@ -52,7 +65,7 @@ class _pageetdaintState extends State<pageetdaint> {
                   children: [
                     Spacer(),
                     Icon(
-                      Icons.school_outlined,
+                      Icons.qr_code_scanner,
                       size: 100,
                       color: HexColor("#04733B"),
                     ),

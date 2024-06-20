@@ -40,7 +40,7 @@ dependencies:
   sqflite: ^2.3.2
   toast: ^0.3.0
   oktoast: ^3.4.0
-  mobile_scanner: ^4.0.1
+  mobile_scanner: ^5.1.1
   stack: ^0.2.2
   url_launcher: ^6.2.6
   firebase_core: ^2.32.0
@@ -49,6 +49,15 @@ dependencies:
   firebase_messaging: ^14.9.4
   firebase_auth: ^4.20.0
   google_sign_in: ^6.2.1
+  shared_preferences: ^2.2.3
+  drop_down_list_menu: ^0.0.9
+  dropdown_button2: ^2.3.9
+  dropdown_textfield: ^1.1.0
+  icon: ^2.2.1
+  icons_flutter: ^0.0.4
+  pretty_qr_code: ^3.3.0
+  qr_flutter: ^4.1.0
+  qr_code_scanner: ^1.0.1
 
 dev_dependencies:
   flutter_test:
