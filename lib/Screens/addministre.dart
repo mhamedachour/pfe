@@ -68,7 +68,7 @@ class _adminState extends State<admin> {
                       color: HexColor("#04733B"),
                     ),
                     Text(
-                      'create prof',
+                      'Créer prof',
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     )
@@ -108,7 +108,7 @@ class _adminState extends State<admin> {
                       color: HexColor("#04733B"),
                     ),
                     Text(
-                      'create etudient',
+                      'Créer etudiant',
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     )

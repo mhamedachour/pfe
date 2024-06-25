@@ -16,7 +16,7 @@ class _scanState extends State<scan> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("scan"),
+        title: Text("scan QR"),
         backgroundColor: HexColor("#04733B"),
       ),
       body: Stack(

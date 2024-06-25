@@ -37,7 +37,7 @@ class _profState extends State<prof> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("cree prof"),
+        title: Text("Créer prof"),
         backgroundColor: HexColor("#04733B"),
       ),
       body: SingleChildScrollView(
@@ -100,7 +100,7 @@ class _profState extends State<prof> {
                         });
                       },
                       child: Text(
-                        'Cree prof',
+                        'Créer prof',
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.w800),
                       )),

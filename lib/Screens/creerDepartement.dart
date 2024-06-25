@@ -110,7 +110,7 @@ class _creerDepartementState extends State<creerDepartement> {
                     child: TextButton(
                         onPressed: () {
                           addUser();
-                          Navigator.push(context,
+                          Navigator.pushReplacement(context,
                               MaterialPageRoute(builder: (context) => Login()));
                         },
                         child: Text(

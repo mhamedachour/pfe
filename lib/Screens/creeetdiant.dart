@@ -36,7 +36,7 @@ class _etdiantState extends State<etdiant> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Cree etdiant"),
+        title: Text("Créer etudiant"),
         backgroundColor: HexColor("#04733B"),
       ),
       body: SingleChildScrollView(
@@ -51,7 +51,7 @@ class _etdiantState extends State<etdiant> {
                 ),
                 getTextFormprofetd(
                   controller: contuserId,
-                  hintName: "donner le Id de etdiant",
+                  hintName: "donner le Id de etudiant",
                   obscureText: false,
                   inputType: TextInputType.number,
                 ),
@@ -60,7 +60,7 @@ class _etdiantState extends State<etdiant> {
                 ),
                 getTextFormprofetd(
                   controller: contNam,
-                  hintName: "donner le nom de etdiant",
+                  hintName: "donner le nom de etudiant",
                   obscureText: false,
                   inputType: TextInputType.name,
                 ),
@@ -69,7 +69,7 @@ class _etdiantState extends State<etdiant> {
                 ),
                 getTextFormprofetd(
                   controller: contnumbregroup,
-                  hintName: "donner le group de etdiant",
+                  hintName: "donner le group de etudiant",
                   obscureText: false,
                   inputType: TextInputType.name,
                 ),
@@ -78,7 +78,7 @@ class _etdiantState extends State<etdiant> {
                 ),
                 getTextFormprofetd(
                   controller: contpassword,
-                  hintName: "donner le password de etdiant",
+                  hintName: "donner le password de etudiant",
                   obscureText: true,
                   inputType: TextInputType.visiblePassword,
                 ),
@@ -87,7 +87,7 @@ class _etdiantState extends State<etdiant> {
                 ),
                 getTextFormprofetd(
                   controller: contannee,
-                  hintName: "donner le annee de etdiant(L1,L2,L3)",
+                  hintName: "donner le annee de etudiant(L1,L2,L3)",
                   obscureText: false,
                   inputType: TextInputType.name,
                 ),
@@ -109,7 +109,7 @@ class _etdiantState extends State<etdiant> {
                         });
                       },
                       child: Text(
-                        'Cree etdiant',
+                        'Créer etudiant',
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.w800),
                       )),

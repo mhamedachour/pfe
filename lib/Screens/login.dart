@@ -113,8 +113,8 @@ class _LoginState extends State<Login> {
                                 error = "Error occorred!";
                               });
                             }
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(SnackBar(content: Text(error)));
+                            // ScaffoldMessenger.of(context)
+                            //.showSnackBar(SnackBar(content: Text(error)));
                           }
                           try {
                             if (password ==
@@ -150,8 +150,8 @@ class _LoginState extends State<Login> {
                                 error = "Error occorred!";
                               });
                             }
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(SnackBar(content: Text(error)));
+                            // ScaffoldMessenger.of(context)
+                            // .showSnackBar(SnackBar(content: Text(error)));
                           }
                           try {
                             if (password ==
@@ -186,8 +186,8 @@ class _LoginState extends State<Login> {
                                 error = "Error occorred!";
                               });
                             }
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(SnackBar(content: Text(error)));
+                            // ScaffoldMessenger.of(context)
+                            //   .showSnackBar(SnackBar(content: Text(error)));
                           }
                         }
                       },

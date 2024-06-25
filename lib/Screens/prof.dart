@@ -115,7 +115,7 @@ class _pageprofState extends State<pageprof> {
                       color: HexColor("#04733B"),
                     ),
                     Text(
-                      'la list presence',
+                      'liste presence',
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     )

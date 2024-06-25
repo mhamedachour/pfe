@@ -15,7 +15,7 @@ class _listprisenceState extends State<listprisence> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("list presence"),
+        title: Text("liste de presence"),
         backgroundColor: HexColor("#04733B"),
       ),
       body: SingleChildScrollView(
